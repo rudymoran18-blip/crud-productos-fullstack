@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+/* Bloqueamos el scroll en toda la página */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Altura total de la ventana */
+}
+
+/* El contenido principal será el único con scroll */
+.main-content {
+  flex: 1; /* Ocupa todo el espacio entre navbar y footer */
+  overflow-y: auto; /* Activa el scroll vertical solo aquí */
+  background-color: #f8f9fa; /* Un gris muy claro de fondo */
+}
+
+/* Estilo para la tabla: Encabezado pegajoso */
+.table-responsive {
+  max-height: calc(100vh - 250px); /* Ajusta según el tamaño de tu nav/footer */
+  overflow-y: auto;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f8f9fa; /* Debe coincidir con el fondo de la tabla */
+  border-bottom: 2px solid #dee2e6;
+}

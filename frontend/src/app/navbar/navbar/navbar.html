@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top py-2">
+  <div class="container">
+    <!-- Brand / Logo -->
+    <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase tracking-wider" [routerLink]="['/productos']">
+      <i class="fa-light fa-house"></i>
+      <span>Gestión<span class="fw-light">Pro</span></span>
+    </a>
+
+    <!-- Botón Móvil Estilizado -->
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido Colapsable -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <!-- Enlaces de navegación -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item mt-2 mt-lg-0">
+          <a class="nav-link px-3 rounded-pill d-inline-flex align-items-center"
+             [routerLink]="['/productos']"
+             routerLinkActive="active bg-white text-primary fw-bold shadow-sm">
+              Inicio
+          </a>
+        </li>
+      </ul>
+
+      <!-- Separador visual solo en móvil -->
+      <hr class="d-lg-none text-white-50 my-3">
+
+      <!-- Sección de Usuario: Adaptable -->
+      <div class="d-flex align-items-center justify-content-between justify-content-lg-end gap-3">
+        <div class="text-white text-end">
+          <small class="d-block text-white-50" style="font-size: 0.75rem;">Bienvenido,</small>
+          <span class="fw-semibold small">Admin </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

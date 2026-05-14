@@ -1,0 +1,112 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <!-- Card del Formulario -->
+      <div class="card shadow border-0">
+        <div class="card-header bg-white py-3 border-bottom">
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-sm btn-light me-3" routerLink="/productos">
+              <i class="bi bi-arrow-left"></i> ←
+            </button>
+            <h5 class="mb-0 fw-bold text-primary">
+              {{ esNuevo ? 'Nuevo Producto' : 'Editar Producto' }}
+            </h5>
+          </div>
+        </div>
+
+        <div class="card-body p-4">
+          <form #formProducto="ngForm" (ngSubmit)="onSubmit(formProducto)" novalidate>
+
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label fw-semibold">Nombre del Producto</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                class="form-control"
+                [ngClass]="{'is-invalid': nombre.invalid && nombre.touched}"
+                [(ngModel)]="producto.nombre"
+                required
+                placeholder="Ej. Laptop Gamer"
+                #nombre="ngModel"
+              />
+              <div class="invalid-feedback">El nombre es obligatorio.</div>
+            </div>
+
+            <div class="row">
+              <!-- Precio -->
+              <div class="col-md-6 mb-3">
+                <label for="precio" class="form-label fw-semibold">Precio (Quetzales)</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">Q</span>
+                  <input
+                    type="number"
+                    id="precio"
+                    name="precio"
+                    class="form-control"
+                    [ngClass]="{'is-invalid': precio.invalid && precio.touched}"
+                    [(ngModel)]="producto.precio"
+                    required
+                    min="0.01"
+                    placeholder="0.00"
+                    #precio="ngModel"
+                  />
+                  <div class="invalid-feedback">Precio inválido.</div>
+                </div>
+              </div>
+
+              <!-- Categoría -->
+              <div class="col-md-6 mb-3">
+                <label for="categoria" class="form-label fw-semibold">Categoría</label>
+                <select
+                  id="categoria"
+                  name="categoria"
+                  class="form-select"
+                  [ngClass]="{'is-invalid': categoria.invalid && categoria.touched}"
+                  [(ngModel)]="producto.categoria"
+                  required
+                  #categoria="ngModel"
+                >
+                  <option value="" disabled selected>Seleccione...</option>
+                  <option value="Electronicos">Electrónicos</option>
+                  <option value="Ropa">Ropa</option>
+                  <option value="Alimentos">Alimentos</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una categoría.</div>
+              </div>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-4">
+              <label for="descripcion" class="form-label fw-semibold">Descripción</label>
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                class="form-control"
+                [ngClass]="{'is-invalid': descripcion.invalid && descripcion.touched}"
+                [(ngModel)]="producto.descripcion"
+                required
+                rows="3"
+                placeholder="Detalles del producto..."
+                #descripcion="ngModel"
+              ></textarea>
+              <div class="invalid-feedback">La descripción es obligatoria.</div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="d-grid gap-2">
+              <button [disabled]="formProducto.invalid" type="submit" class="btn btn-primary py-2 fw-bold">
+                {{ esNuevo ? 'Guardar Producto' : 'Actualizar Cambios' }}
+              </button>
+              <button type="button" class="btn btn-light border py-2" routerLink="/productos">
+                Cancelar y Volver
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
