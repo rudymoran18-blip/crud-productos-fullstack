@@ -97,8 +97,35 @@ backend/database/productos.sql
 
 ## Capturas
 
+### Listado de productos
 
+<p align="center">
+  <img src="./assets/lst-productos.png" width="900">
+</p>
 
+---
+
+### Registro de productos
+
+<p align="center">
+  <img src="./assets/registrar-producto.png" width="900">
+</p>
+
+---
+
+### Edición de productos
+
+<p align="center">
+  <img src="./assets/editar-producto.png" width="900">
+</p>
+
+---
+
+### Vista responsive
+
+<p align="center">
+  <img src="./assets/mobile-view.png" width="300">
+</p>
 ---
 
 ## Autor
