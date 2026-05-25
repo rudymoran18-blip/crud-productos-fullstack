@@ -121,6 +121,16 @@ backend/database/productos.sql
 
 ---
 
+---
+
+### Cuano no hay productos
+
+<p align="center">
+  <img src="./assets/lst-vacio-products.png" width="900">
+</p>
+
+---
+
 ### Vista responsive
 
 <p align="center">
